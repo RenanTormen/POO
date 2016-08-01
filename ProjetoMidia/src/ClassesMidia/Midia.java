@@ -8,18 +8,18 @@ public class Midia {
     private double preco;
     private String nome;
 
-    public Midia(){
-    
+    public Midia() {
+        this(0, "Nenhum", 0);
     }
-    
-    public Midia(int codigo, String nome, double preco){
-        
+
+    public Midia(int codigo, String nome, double preco) {
+
         this.codigo = codigo;
         this.nome = nome;
         this.codigo = codigo;
-    
+
     }
-    
+
     public int getCodigo() {
         return codigo;
     }
@@ -33,7 +33,12 @@ public class Midia {
     }
 
     public void setPreco(double preco) {
-        this.preco = preco;
+        if (preco > 0) {
+            this.preco = preco;
+        } else {
+            System.out.println("PREÇO BOSTA, COMEÇA DENOVO");
+            System.exit(1);
+        }
     }
 
     public String getNome() {
@@ -44,35 +49,32 @@ public class Midia {
         this.nome = nome;
     }
 
-    public void printDados(){
-        
-        System.out.println("Nome: "+getNome()+"\n Codigo: "+getCodigo()+"\n Preço: "+getPreco());
+    public String printDados() {
+
+        return " Nome: " + this.getNome() + " \n Código: " + this.getCodigo() + " \n Preço: " + this.getPreco();
     }
-    
-    public String getTipo(){
-    
-        return this.toString();
+
+    public String getTipo() {
+
+        return "Midia";
     }
-    
-        public String getDetalhes(){
-    
-        return this.toString();
+
+    public String getDetalhes() {
+        return this.printDados() + "\n Tipo de mídia: " + this.getTipo();
     }
-    
-    
-    public void inserirDados(){
-        
+
+    public void inserirDados() {
+
         Scanner scn = new Scanner(System.in);
         System.out.println("Insira o nome: ");
         setNome(scn.nextLine());
-        
+
         System.out.println("Insira o Código: ");
         setCodigo(scn.nextInt());
-        
+
         System.out.println("Insira o Preço: ");
         setPreco(scn.nextDouble());
-        
-        
+
     }
 
 }
