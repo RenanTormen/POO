@@ -1,8 +1,13 @@
 package ClassesMidia;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class DVD extends Midia {
+    
+    public DVD(){
+    
+    }
 
     private int nFaixas;
     
@@ -37,18 +42,18 @@ public class DVD extends Midia {
     @Override
     public void inserirDados() {
 
-        Scanner scn = new Scanner(System.in);
+       /* Scanner scn = new Scanner(System.in);
         System.out.println("Insira o nome: ");
-        this.setNome(scn.nextLine());
+        this.setNome(scn.nextLine());*/
+       
+        this.setNome(JOptionPane.showInputDialog(null,"Digite o nome"));
 
-        System.out.println("Insira o Código: ");
-        this.setCodigo(scn.nextInt());
+        this.setCodigo(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o código")));
 
-        System.out.println("Insira o Preço: ");
-        this.setPreco(scn.nextDouble());
+        this.setPreco(Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o preço")));
 
-        System.out.println("Insira o numero de faixas: ");
-        this.setnFaixas(scn.nextInt());
+        
+        this.setnFaixas(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o Número de faixas")));
 
         System.out.println(printDados());
 

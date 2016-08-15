@@ -1,8 +1,13 @@
 package ClassesMidia;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class CD extends Midia {
+    
+    public CD(){
+    
+    }
 
     private int musicas;
 
@@ -35,10 +40,8 @@ public class CD extends Midia {
     @Override
     public void inserirDados() {
 
-        Scanner scn = new Scanner(System.in);
         super.inserirDados();
-        System.out.println("Digite o numero de faixas");
-        this.setMusicas(scn.nextInt());
+        this.setMusicas(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o Número de Musicas")));
         System.out.println(printDados());
 
     }

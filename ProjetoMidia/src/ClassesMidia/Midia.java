@@ -1,6 +1,8 @@
 package ClassesMidia;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import jdk.nashorn.internal.scripts.JO;
 
 public class Midia {
 
@@ -65,16 +67,23 @@ public class Midia {
 
     public void inserirDados() {
 
-        Scanner scn = new Scanner(System.in);
+       /* Scanner scn = new Scanner(System.in);
         System.out.println("Insira o nome: ");
-        setNome(scn.nextLine());
+        setNome(scn.nextLine());*/
+        
+        setNome(JOptionPane.showInputDialog(null,"Digite o nome"));
+        
+        
+        /*System.out.println("Insira o Código: ");
+        setCodigo(scn.nextInt());*/
+        
+        setCodigo(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o código")));
 
-        System.out.println("Insira o Código: ");
-        setCodigo(scn.nextInt());
+        /*System.out.println("Insira o Preço: ");
+        setPreco(scn.nextDouble());*/
 
-        System.out.println("Insira o Preço: ");
-        setPreco(scn.nextDouble());
-
+        setPreco(Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o preço")));
+        
     }
 
 }
