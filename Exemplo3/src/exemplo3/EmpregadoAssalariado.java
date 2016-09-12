@@ -1,6 +1,6 @@
 package exemplo3;
 
-public class EmpregadoAssalariado extends Empregado {
+public class EmpregadoAssalariado extends Empregado implements Autenticavel {
 
 	private double salarioSemanal;
 	private double salarioMensal;
@@ -34,6 +34,12 @@ public class EmpregadoAssalariado extends Empregado {
 	public double proventos() {
 		//
 		return 0;
+	}
+
+	@Override
+	public void autentica() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
